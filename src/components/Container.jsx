@@ -68,7 +68,14 @@ const Container = () => {
               handleMarked={handleMarked}
             />
           ))}
-          <div className="card">1</div>
+          <div className="card add-img">
+            <div>
+              <span>
+                <i className="fa-regular fa-image"></i>
+              </span>
+              <p>Add Image</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
