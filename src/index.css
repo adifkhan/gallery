@@ -17,7 +17,7 @@ body {
   background-color: whitesmoke;
   width: 100%;
   min-height: 100vh;
-  padding: 8rem 5rem;
+  padding: 5rem;
 }
 .gallery_wrapper {
   width: 1000px;
@@ -137,7 +137,7 @@ body {
 }
 @media (max-width: 960px) {
   .gallery_container {
-    padding: 6rem 3rem;
+    padding: 5rem 3rem;
   }
   .gallery {
     grid-template-columns: repeat(4, 1fr);
