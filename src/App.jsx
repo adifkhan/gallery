@@ -1,7 +1,13 @@
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import Container from "./components/Container";
+
 function App() {
   return (
     <div>
-      <h1>gallery</h1>
+      <DndProvider backend={HTML5Backend}>
+        <Container />
+      </DndProvider>
     </div>
   );
 }
