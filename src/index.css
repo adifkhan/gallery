@@ -11,9 +11,11 @@ html {
 body {
   font-family: "Roboto", sans-serif;
 }
+
+/* -------------components styles---------- */
 .gallery_container {
   background-color: whitesmoke;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 8rem 5rem;
 }
@@ -26,12 +28,20 @@ body {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .header {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   height: 4rem;
 }
-.header h2 {
-  font-size: 2.6rem;
-  font-weight: 500;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 25px;
+}
+.logo h2 {
+  font-size: 2rem;
+  color: #a01f62;
 }
 .marked_item {
   display: flex;
@@ -58,7 +68,12 @@ body {
   background-color: white;
   cursor: grab;
   position: relative;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  transition: 0.4s;
+}
+.card:hover {
+  transform: scale(1.05);
 }
 .card:first-child {
   grid-column: span 2;
@@ -81,33 +96,40 @@ body {
 }
 .checkbox {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  height: 15px;
-  width: 15px;
-  opacity: 0;
+  top: 5px;
+  left: 5px;
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
-.card:hover .checkbox,
-.checkbox:checked {
-  opacity: 1;
+.checkbox::after {
+  content: "\f111";
+  font-family: "Font Awesome 6 free";
+  font-weight: 400;
+  font-size: 20px;
+  color: #e2e6f3;
+}
+.checkbox:checked::after {
+  content: "\f058";
+  font-weight: 900;
+  color: #a01f62;
 }
 .add-img {
   border: 2px dashed rgb(226, 225, 225);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1.5rem;
   align-items: center;
   font-size: 1.6rem;
   cursor: default;
 }
-.add-img span {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
 
-/* ------------Responsiveness--------- */
-
+/* ------------------------------------------
+              Responsiveness
+   ---------------------------------------- */
 @media (max-width: 1150px) {
   .gallery_wrapper {
     width: 100%;

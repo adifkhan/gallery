@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import update from "immutability-helper";
 import Card from "./Card";
 import { data } from "../data/data";
+import logo from "../assets/onion.png";
 
 const Container = () => {
   const [cards, setCards] = useState(data);
@@ -19,7 +20,7 @@ const Container = () => {
 
   // handle delete marked items
   const handleDelete = () => {
-    const confirmDlt = confirm("Are you sure you want to delete!");
+    const confirmDlt = confirm("Are you sure you want to delete?");
     if (confirmDlt) {
       const filteredItems = cards.filter(
         (obj) => !marked.includes(obj.id.toString())
@@ -55,7 +56,10 @@ const Container = () => {
               </p>
             </div>
           ) : (
-            <h2>Gallery</h2>
+            <div className="logo">
+              <img src={logo} alt="onion" />
+              <h2>Gallery</h2>
+            </div>
           )}
         </div>
         <div className="gallery">
@@ -69,12 +73,10 @@ const Container = () => {
             />
           ))}
           <div className="card add-img">
-            <div>
-              <span>
-                <i className="fa-regular fa-image"></i>
-              </span>
-              <p>Add Image</p>
-            </div>
+            <span>
+              <i className="fa-regular fa-image"></i>
+            </span>
+            <p>Add Image</p>
           </div>
         </div>
       </div>
